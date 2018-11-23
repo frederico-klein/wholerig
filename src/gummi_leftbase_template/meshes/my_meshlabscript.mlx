@@ -1,0 +1,17 @@
+<!DOCTYPE FilterScript>
+<FilterScript>
+ <filter name="Transform: Flip and/or swap axis">
+  <Param type="RichBool" value="false" name="flipX" description="Flip X axis" tooltip="If selected the axis will be swapped (mesh mirrored along the YZ plane"/>
+  <Param type="RichBool" value="true" name="flipY" description="Flip Y axis" tooltip="If selected the axis will be swapped (mesh mirrored along the XZ plane"/>
+  <Param type="RichBool" value="false" name="flipZ" description="Flip Z axis" tooltip="If selected the axis will be swapped (mesh mirrored along the XY plane"/>
+  <Param type="RichBool" value="false" name="swapXY" description="Swap X-Y axis" tooltip="If selected the two axis will be swapped. All the swaps are performed in this order"/>
+  <Param type="RichBool" value="false" name="swapXZ" description="Swap X-Z axis" tooltip="If selected the two axis will be swapped. All the swaps are performed in this order"/>
+  <Param type="RichBool" value="false" name="swapYZ" description="Swap Y-Z axis" tooltip="If selected the two axis will be swapped. All the swaps are performed in this order"/>
+  <Param type="RichBool" value="true" name="Freeze" description="Freeze Matrix" tooltip="The transformation is explicitly applied, and the vertex coordinates are actually changed"/>
+  <Param type="RichBool" value="false" name="allLayers" description="Apply to all visible Layers" tooltip="If selected the filter will be applied to all visible mesh layers"/>
+ </filter>
+ <filter name="Invert Faces Orientation">
+  <Param type="RichBool" value="true" name="forceFlip" description="Force Flip" tooltip="If selected, the normals will always be flipped; otherwise, the filter tries to set them outside"/>
+  <Param type="RichBool" value="false" name="onlySelected" description="Flip only selected faces" tooltip="If selected, only selected faces will be affected"/>
+ </filter>
+</FilterScript>

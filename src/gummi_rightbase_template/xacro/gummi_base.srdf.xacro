@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<robot name="gummi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- group name="right_arm" -->
+      <!-- <chain base_link="base_link" tip_link="right_hand" /> -->
+<xacro:macro name="group_right_arm_base">
+  <joint name="right/shoulder_yaw" />
+  <joint name="right/shoulder_roll" />
+  <joint name="right/shoulder_pitch" />
+  <joint name="right/upperarm_roll" />
+  <joint name="right/elbow" />
+  <joint name="right/fastswitch" />
+</xacro:macro>
+
+<xacro:macro name="group_state_right_arm_base">
+  <joint name="right/shoulder_pitch" value="0" />
+  <joint name="right/shoulder_roll" value="0" />
+  <joint name="right/shoulder_yaw" value="0" />
+  <joint name="right/upperarm_roll" value="0" />
+  <joint name="right/elbow" value="0" />
+</xacro:macro>
+
+<xacro:macro name="virtual_joints_base">
+  <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
+  <virtual_joint name="virtual_joint" type="fixed" parent_frame="map" child_link="right/base_link" />
+</xacro:macro>
+
+<xacro:macro name="disable_collisions_base">
+  <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+  <disable_collisions link1="right/base_link" link2="right/shoulder" reason="Never" />
+  <disable_collisions link1="right/base_link" link2="right/shoulder_preroll" reason="Adjacent" />
+  <disable_collisions link1="right/base_link" link2="right/upperarm" reason="Never" />
+  <disable_collisions link1="right/base_link" link2="right/upperarm_preroll" reason="Never" />
+  <disable_collisions link1="right/shoulder" link2="right/shoulder_preroll" reason="Adjacent" />
+  <disable_collisions link1="right/shoulder" link2="right/upperarm" reason="Never" />
+  <disable_collisions link1="right/shoulder" link2="right/upperarm_preroll" reason="Adjacent" />
+  <disable_collisions link1="right/shoulder_preroll" link2="right/upperarm" reason="Never" />
+  <disable_collisions link1="right/shoulder_preroll" link2="right/upperarm_preroll" reason="Never" />
+  <disable_collisions link1="right/upperarm" link2="right/upperarm_preroll" reason="Adjacent" />
+</xacro:macro>
+
+<xacro:macro name="disable_collisions_mixed">
+  <!--MIXED DISABLE COLLISIONS FOR BASE EE COLISIONS: set by hand or remove! -->
+  <disable_collisions link1="right/base_link" link2="right/lowerarm_preroll_u" reason="Never" />
+  <disable_collisions link1="right/lowerarm" link2="right/shoulder" reason="Never" />
+  <disable_collisions link1="right/lowerarm" link2="right/shoulder_preroll" reason="Never" />
+  <disable_collisions link1="right/lowerarm" link2="right/upperarm" reason="Never" />
+  <disable_collisions link1="right/lowerarm" link2="right/upperarm_preroll" reason="Never" />
+  <disable_collisions link1="right/lowerarm_preroll_u" link2="right/shoulder" reason="Never" />
+  <disable_collisions link1="right/lowerarm_preroll_u" link2="right/shoulder_preroll" reason="Never" />
+  <disable_collisions link1="right/lowerarm_preroll_u" link2="right/upperarm" reason="Adjacent" />
+  <disable_collisions link1="right/lowerarm_preroll_u" link2="right/upperarm_preroll" reason="Never" />
+  <disable_collisions link1="right/lowerarm_preroll_u" link2="right/lowerarm_preroll_d" reason="Adjacent" />
+</xacro:macro>
+
+
+
+</robot>

@@ -1,0 +1,4 @@
+run mirromesh in meshes
+invert y all displacements on all joints of this base
+invert either the joint angle limits or all joint angles (on x and z direction. the ones on y are correct!!!)
+since inverting joint angle limits is more troublesome, i will invert the axis

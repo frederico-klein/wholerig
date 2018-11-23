@@ -1,0 +1,11 @@
+<launch>
+    <!-- THIS FILE IS GENERAL FOR ANY BASE AND ANY END EFFECTOR AND SHOULD NOT BE EDITED. -->
+    <arg name="base" value="$(env ROS_GUMMI_LEFTBASE)" />
+    <arg name="ee" value="$(env ROS_GUMMI_LEFTEE)" />
+    <include file="$(eval find('gummi_leftbase_' + base) + '/launch/controllers_base.launch')">
+      <!--arg name="base" value="$(arg base)"/-->
+    </include>
+    <include file="$(eval find('gummi_leftee_' + ee) + '/launch/controllers_ee.launch')">
+       <!--arg name="ee" value="$(arg ee)"/-->
+    </include>
+</launch>

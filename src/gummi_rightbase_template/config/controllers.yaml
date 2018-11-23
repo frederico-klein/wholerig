@@ -1,0 +1,15 @@
+controller_list:
+  - name: gummi_right_arm_controller
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    joints:
+      - right/shoulder_yaw
+      - right/shoulder_roll
+      - right/shoulder_pitch
+      - right/upperarm_roll
+      - right/elbow
+      - right/forearm_roll
+      - right/wrist_pitch
+  # - name: fake_right_gripper_controller
+    # joints:
+      # - gripper

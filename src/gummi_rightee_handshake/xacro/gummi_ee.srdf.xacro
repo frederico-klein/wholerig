@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<robot name="gummi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:macro name="group_right_arm_ee">
+    <joint name="right/forearm_roll" />
+    <joint name="right/wrist_pitch" />
+</xacro:macro>
+
+<xacro:macro name="group_right_gripper_ee">
+  <group name="right_gripper">
+    <link name="right/wrist"/>
+    <joint name="right/gripper"/>
+  </group>
+</xacro:macro>
+
+<xacro:macro name="group_state_right_arm_ee">
+  <joint name="right/forearm_roll" value="0" />
+  <joint name="right/wrist_pitch" value="0" />
+</xacro:macro>
+
+<xacro:macro name="end_effector_ee">
+  <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
+<end_effector group="right_gripper" name="right_eef" parent_link="right/wrist" parent_group="right_arm"/>
+</xacro:macro>
+
+<xacro:macro name="disable_collisions_ee">
+  <!-- <disable_collisions link1="right/right_hand" link2="right/wrist" reason="Never" />
+  <disable_collisions link1="right/right_hand" link2="right/gripper_link" reason="Never" /> -->
+  <disable_collisions link1="right/i1" link2="right/lowerarm" reason="Never" />
+  <disable_collisions link1="right/i2" link2="right/lowerarm" reason="Never" />
+  <disable_collisions link1="right/i3" link2="right/lowerarm" reason="Never" />
+  <disable_collisions link1="right/i4" link2="right/lowerarm" reason="Never" />
+  <disable_collisions link1="right/i5" link2="right/lowerarm" reason="Never" />
+
+  <disable_collisions link1="right/i1" link2="right/wrist" reason="Never" />
+  <disable_collisions link1="right/i2" link2="right/wrist" reason="Never" />
+  <disable_collisions link1="right/i3" link2="right/wrist" reason="Never" />
+  <disable_collisions link1="right/i4" link2="right/wrist" reason="Never" />
+  <disable_collisions link1="right/i5" link2="right/wrist" reason="Never" />
+
+  <disable_collisions link1="right/i1" link2="right/i2" reason="Never" />
+  <disable_collisions link1="right/i1" link2="right/i3" reason="Never" />
+  <disable_collisions link1="right/i1" link2="right/i4" reason="Never" />
+  <disable_collisions link1="right/i1" link2="right/i5" reason="Never" />
+
+  <disable_collisions link1="right/i2" link2="right/i3" reason="Never" />
+  <disable_collisions link1="right/i2" link2="right/i4" reason="Never" />
+  <disable_collisions link1="right/i2" link2="right/i5" reason="Never" />
+
+  <disable_collisions link1="right/i3" link2="right/i4" reason="Never" />
+  <disable_collisions link1="right/i3" link2="right/i5" reason="Never" />
+
+  <disable_collisions link1="right/i4" link2="right/i5" reason="Never" />
+
+  <disable_collisions link1="right/lowerarm" link2="right/lowerarm_preroll_d" reason="Adjacent" />
+  <disable_collisions link1="right/lowerarm" link2="right/wrist" reason="Adjacent" />
+  <disable_collisions link1="right/lowerarm_preroll_d" link2="right/wrist" reason="Never" />
+</xacro:macro>
+</robot>

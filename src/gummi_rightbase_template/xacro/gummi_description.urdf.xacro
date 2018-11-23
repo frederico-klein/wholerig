@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="gummi" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(env GUMMI_RIGHTBASEPATH)/xacro/gummi_description_base.urdf.xacro" />
+<xacro:include filename="$(env GUMMI_RIGHTEEPATH)/xacro/gummi_description_ee.urdf.xacro" />
+
+<link name="base_link"/>
+
+<joint name="rightbase_displacement" type="fixed">
+  <origin rpy="0 0 0" xyz="0.2 0 0"/>
+  <parent link="base_link"/>
+  <child link="right/base_link"/>
+  <axis xyz="0 0 0"/>
+</joint>
+</robot>
