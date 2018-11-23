@@ -1,0 +1,18 @@
+[submodule "gummi_rightee_handshake"]
+	path = gummi_rightee_handshake
+	url = https://github.com/frederico-klein/gummi_rightee_handshake.git
+[submodule "gummi_rightbase_template"]
+	path = gummi_rightbase_template
+	url = https://github.com/frederico-klein/gummi_rightbase_template.git
+[submodule "gummi_leftee_handshake"]
+	path = gummi_leftee_handshake
+	url = https://github.com/frederico-klein/gummi_leftee_handshake.git
+[submodule "gummi_leftbase_template"]
+	path = gummi_leftbase_template
+	url = https://github.com/frederico-klein/gummi_leftbase_template.git
+[submodule "gummi_rig"]
+	path = gummi_rig
+	url = https://github.com/frederico-klein/gummi_rig.git
+[submodule "gummi_moveit"]
+	path = gummi_moveit
+	url = https://github.com/GummiArmCE/gummi_moveit.git
