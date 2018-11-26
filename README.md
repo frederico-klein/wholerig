@@ -13,4 +13,8 @@ now catkin_make
 
 # connecting to mongodb
 
-Mongo should be installed and working with the steps above, but the port in which it is instantiated is different, namely, 27017, which you need to change to test it in rviz.  
+run the default warehouse with 
+
+    roslaunch gummi_moveit default_warehouse_db.launch
+
+You should be able to connect by running the steps above. If things fail, you might not have the db path directory set (either /data/db or /tmp/db, those should be created if needed) or another instance of mongo might be running with the incorrect port (either set up the right port - the default one is 27017) or kill mongod and restart it with the default_warehouse_db.launch file. 
