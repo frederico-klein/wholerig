@@ -16,6 +16,7 @@
 [submodule "gummi_moveit"]
 	path = src/gummi_moveit
 	url = https://github.com/GummiArmCE/gummi_moveit.git
+	branch = onecommit
 [submodule "src/warehouse_ros_mongo"]
 	path = src/warehouse_ros_mongo
 	url = https://github.com/ros-planning/warehouse_ros_mongo.git
